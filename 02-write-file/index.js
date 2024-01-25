@@ -6,7 +6,7 @@ const output = fs.createWriteStream(path.join(__dirname, 'text.txt'), 'utf-8');
 stdout.write("Please, enter text\n");
 stdin.on("data", (data) => {
   const text = data.toString();
-    if (text.toLowerCase() === ".exit\r\n") {
+    if (text.toLowerCase() === ".exit\r\n" || text.toLowerCase() === "exit\r\n") {
       process.exit();
     }
   output.write(`${text}`);
